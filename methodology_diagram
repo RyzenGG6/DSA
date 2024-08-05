@@ -1,0 +1,36 @@
+digraph "Methodology Diagram" {
+	graph [fontcolor="#2D3436" fontname="Sans-Serif" fontsize=15 label="Methodology Diagram" nodesep=0.60 pad=2.0 rankdir=LR ranksep=0.75 splines=ortho]
+	node [fixedsize=true fontcolor="#2D3436" fontname="Sans-Serif" fontsize=13 height=1.4 imagescale=true labelloc=b shape=box style=rounded width=1.4]
+	edge [color="#7B8894"]
+	subgraph "cluster_Data Collection" {
+		graph [bgcolor="#E5F5FD" fontname="Sans-Serif" fontsize=12 label="Data Collection" labeljust=l pencolor="#AEB6BE" rankdir=LR shape=box style=rounded]
+		"73197dc499b448398baa09fdf34e5d59" [label="Food Nutrition Dataset" height=1.9 image="C:\Users\sidpr\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\resources/generic/device\mobile.png" shape=none]
+	}
+	subgraph "cluster_Data Preprocessing" {
+		graph [bgcolor="#E5F5FD" fontname="Sans-Serif" fontsize=12 label="Data Preprocessing" labeljust=l pencolor="#AEB6BE" rankdir=LR shape=box style=rounded]
+		cb8e606d758341b680472f26fa4d0598 [label="Column Management" height=1.9 image="C:\Users\sidpr\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\resources/onprem/analytics\spark.png" shape=none]
+		b6389615d1a946b592ac7ebb7e449e6f [label="Target Definition" height=1.9 image="C:\Users\sidpr\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\resources/onprem/analytics\spark.png" shape=none]
+		"9237a0b498c341b7ba6f713c8e6fe771" [label="Feature Separation" height=1.9 image="C:\Users\sidpr\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\resources/onprem/analytics\spark.png" shape=none]
+		d1cf70438bfd4285ad398fe467abdfa9 [label="Data Splitting" height=1.9 image="C:\Users\sidpr\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\resources/onprem/analytics\spark.png" shape=none]
+		c99e93ca0b0644a7a7838e5a9c57dad6 [label="Feature Standardization" height=1.9 image="C:\Users\sidpr\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\resources/onprem/analytics\spark.png" shape=none]
+	}
+	subgraph "cluster_Model Development" {
+		graph [bgcolor="#E5F5FD" fontname="Sans-Serif" fontsize=12 label="Model Development" labeljust=l pencolor="#AEB6BE" rankdir=LR shape=box style=rounded]
+		"6259edaa898847bcad0f4538f002198e" [label="Model Architecture" height=1.9 image="C:\Users\sidpr\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\resources/onprem/analytics\spark.png" shape=none]
+		"76684b11c6244d0ab7cfa831bdd9ee83" [label="Model Compilation" height=1.9 image="C:\Users\sidpr\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\resources/onprem/analytics\spark.png" shape=none]
+	}
+	subgraph "cluster_Model Training and Evaluation" {
+		graph [bgcolor="#E5F5FD" fontname="Sans-Serif" fontsize=12 label="Model Training and Evaluation" labeljust=l pencolor="#AEB6BE" rankdir=LR shape=box style=rounded]
+		"40ed2ce7bb9744e5a33b7b5ddbd32f92" [label="Model Training" height=1.9 image="C:\Users\sidpr\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\resources/onprem/analytics\spark.png" shape=none]
+		"46b1eec0390d4f85a8806cfc0d400620" [label="Model Evaluation" height=1.9 image="C:\Users\sidpr\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\resources/onprem/analytics\spark.png" shape=none]
+	}
+	"73197dc499b448398baa09fdf34e5d59" -> cb8e606d758341b680472f26fa4d0598 [dir=forward fontcolor="#2D3436" fontname="Sans-Serif" fontsize=13]
+	cb8e606d758341b680472f26fa4d0598 -> b6389615d1a946b592ac7ebb7e449e6f [dir=forward fontcolor="#2D3436" fontname="Sans-Serif" fontsize=13]
+	b6389615d1a946b592ac7ebb7e449e6f -> "9237a0b498c341b7ba6f713c8e6fe771" [dir=forward fontcolor="#2D3436" fontname="Sans-Serif" fontsize=13]
+	"9237a0b498c341b7ba6f713c8e6fe771" -> d1cf70438bfd4285ad398fe467abdfa9 [dir=forward fontcolor="#2D3436" fontname="Sans-Serif" fontsize=13]
+	d1cf70438bfd4285ad398fe467abdfa9 -> c99e93ca0b0644a7a7838e5a9c57dad6 [dir=forward fontcolor="#2D3436" fontname="Sans-Serif" fontsize=13]
+	c99e93ca0b0644a7a7838e5a9c57dad6 -> "6259edaa898847bcad0f4538f002198e" [dir=forward fontcolor="#2D3436" fontname="Sans-Serif" fontsize=13]
+	"6259edaa898847bcad0f4538f002198e" -> "76684b11c6244d0ab7cfa831bdd9ee83" [dir=forward fontcolor="#2D3436" fontname="Sans-Serif" fontsize=13]
+	"76684b11c6244d0ab7cfa831bdd9ee83" -> "40ed2ce7bb9744e5a33b7b5ddbd32f92" [dir=forward fontcolor="#2D3436" fontname="Sans-Serif" fontsize=13]
+	"40ed2ce7bb9744e5a33b7b5ddbd32f92" -> "46b1eec0390d4f85a8806cfc0d400620" [dir=forward fontcolor="#2D3436" fontname="Sans-Serif" fontsize=13]
+}
