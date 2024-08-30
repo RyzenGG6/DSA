@@ -33,6 +33,6 @@ string format(string s)
 
 int main()
 {
-    string a = "a2b3c4d5a2";
+    string a = "a3b2c5a1g9c2";
     cout << format(a);
 }
