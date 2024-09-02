@@ -2,37 +2,31 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-string format(string s)
-{
-    string ans;
-    map<char, int> m;
-    for (int i = 0; i < s.size(); i++)
-    {
-        if (!isdigit(s[i]))
-        {
-            int n = s[i + 1] - '0';
+     bool increasingTriplet(vector<int>& nums) {
+        int l = 0, r = 2;
+        bool ans = false;
+        while (r < nums.size()) {
+            for (int i = l; i <=r; i++) {
+                if (nums[i + 1] - nums[i] >= 1) {
+                    ans = true;
+                    continue;
+                } else {
+                    ans = false;
+                    break;
+                }
+            }
+            if (!ans) {
 
-            try
-            {
-                int f = m.at(s[i]);
-                int g = m.at(s[i]);
-                m[s[i]] = g + n;
+                l++;
+                r++;
             }
-            catch(out_of_range& e){
-                  m[s[i]]=n;
-            }
+            else break;
         }
+        return ans;
     }
-    for (auto pair=m.begin();pair!=m.end();pair++)
-    {
-        ans += pair->first;
-        ans += to_string(pair->second);
-    }
-    return ans;
-}
 
 int main()
 {
-    string a = "a3b2c5a1g9c2";
-    cout << format(a);
+    vector<int>nums{2,1,5,0,4,6};
+    cout << increasingTriplet(nums);
 }
