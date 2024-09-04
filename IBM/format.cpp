@@ -28,5 +28,6 @@ using namespace std;
 int main()
 {
     vector<int>nums{2,1,5,0,4,6};
-    cout << increasingTriplet(nums);
+    char d='c'+2;
+    cout<<d;
 }
