@@ -2,32 +2,38 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-     bool increasingTriplet(vector<int>& nums) {
-        int l = 0, r = 2;
-        bool ans = false;
-        while (r < nums.size()) {
-            for (int i = l; i <=r; i++) {
-                if (nums[i + 1] - nums[i] >= 1) {
-                    ans = true;
-                    continue;
-                } else {
-                    ans = false;
-                    break;
-                }
-            }
-            if (!ans) {
+int compareVersion(string version1, string version2)
+{
+    int tmp, tmp2;
+    if (version1.size() > 2)
+    {
 
-                l++;
-                r++;
-            }
-            else break;
-        }
-        return ans;
+        tmp = stoi(version1.substr(2, version1.size() - 2));
     }
+    else
+    {
+        tmp = 0;
+    }
+    if (version2.size() > 2)
+    {
+        tmp2 = stoi(version2.substr(2, version2.size() - 2));
+    }
+    else
+        tmp2 = 0;
+
+    cout << tmp << tmp2;
+    if (tmp < tmp2)
+        return -1;
+    if (tmp > tmp2)
+        return 1;
+    else
+        return 0;
+}
 
 int main()
 {
-    vector<int>nums{2,1,5,0,4,6};
-    char d='c'+2;
-    cout<<d;
+    string a = "hello", b = "he";
+    auto it = a.find(b);
+    if (it != string::npos)
+        cout <<"hello";
 }
