@@ -2,38 +2,22 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int compareVersion(string version1, string version2)
+int reverse(int a)
 {
-    int tmp, tmp2;
-    if (version1.size() > 2)
+    int rem = 0, c = 0, ans = 0;
+    int len = to_string(a).size();
+    while (c != len)
     {
-
-        tmp = stoi(version1.substr(2, version1.size() - 2));
+        rem = a % 10;
+        ans *= 10;
+        ans += rem;
+        a = a / 10;
+        c++;
     }
-    else
-    {
-        tmp = 0;
-    }
-    if (version2.size() > 2)
-    {
-        tmp2 = stoi(version2.substr(2, version2.size() - 2));
-    }
-    else
-        tmp2 = 0;
-
-    cout << tmp << tmp2;
-    if (tmp < tmp2)
-        return -1;
-    if (tmp > tmp2)
-        return 1;
-    else
-        return 0;
+    return ans;
 }
-
 int main()
 {
-    string a = "hello", b = "he";
-    auto it = a.find(b);
-    if (it != string::npos)
-        cout <<"hello";
+    vector<int> v{2, 2, 3, 3, 2, 4, 4, 4, 4, 4};
+    cout << reverse(123);
 }
